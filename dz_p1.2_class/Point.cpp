@@ -2,14 +2,6 @@
 #include "Point.h"
 #include <iostream>
 
-int Point::getX() { return x; }
-int Point::getY() { return y; }
-int Point::getZ() { return z; }
-
-void Point::setX(int newX) { x = newX; }
-void Point::setY(int newY) { y = newY; }
-void Point::setZ(int newZ) { z = newZ; }
-
 void Point::show()
 {
 	std::cout
