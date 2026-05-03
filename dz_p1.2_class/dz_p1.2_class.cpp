@@ -8,22 +8,19 @@ int main()
 
 	point.show();
 
+	point.setX(8);
+	point.setY(3);
+	point.setZ(-2);
+	std::cout << "Changed" << std::endl;
+	point.show();
+
 	point.import(path);
 	std::cout << "------------" << '\n';
 	std::cout << "Imported" << std::endl;
-
-	std::cout
-		<< "X: " << point.getX() << '\n'
-		<< "Y: " << point.getY() << '\n'
-		<< "Z: " << point.getZ() << '\n'
-		<< "------------" << '\n';
-
-	point.setX(12);
-	point.setY(-3);
-	point.setZ(0);
-	std::cout << "Changed" << std::endl;
-
 	point.show();
+
 	point.save(path);
 	std::cout << "Saved" << std::endl;
+
+	std::cout << "Number of created Points: " << Point::getObjCount() << std::endl;
 }

@@ -4,40 +4,34 @@
 class Point
 {
 private:
+	static int objCount;
+
 	int x,
 		y,
 		z;
 
 public:
-	Point()
-	{
-		x = 0;
-		y = 0;
-		z = 0;
-	}
-
 	Point(int newX, int newY, int newZ)
+		: x{newX},
+		y{newY},
+		z{newZ}
 	{
-		x = newX;
-		y = newY;
-		z = newZ;
+		objCount++;
 	}
 
-	int getX() { return x; }
-	int getY() { return y; }
-	int getZ() { return z; }
+	Point() : Point{ 0, 0, 0 } {}
 
-	void setX(int newX) { x = newX; }
-	void setY(int newY) { y = newY; }
-	void setZ(int newZ) { z = newZ; }
+	int getX();
+	int getY();
+	int getZ();
+
+	void setX(int newX);
+	void setY(int newY);
+	void setZ(int newZ);
 
 	void show();
-
 	void save(const char path[]);
 	void import(const char path[]);
 
-	~Point()
-	{
-		std::cout << "-Destructed-" << std::endl;
-	}
+	static int getObjCount();
 };

@@ -2,6 +2,8 @@
 #include "Point.h"
 #include <iostream>
 
+int Point::objCount = 0;
+
 void Point::show()
 {
 	std::cout
@@ -30,3 +32,13 @@ void Point::import(const char path[])
 
 	fclose(fin);
 }
+
+int Point::getX() { return x; }
+int Point::getY() { return y; }
+int Point::getZ() { return z; }
+
+void Point::setX(int newX) { x = newX; }
+void Point::setY(int newY) { y = newY; }
+void Point::setZ(int newZ) { z = newZ; }
+
+int Point::getObjCount() { return objCount; }
